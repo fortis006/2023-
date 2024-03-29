@@ -21,7 +21,7 @@ const dropdownValues = ref([
 ]);
 const dropdownValue = ref(null);
 const lineData = reactive({
-    labels: ['Januar', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels: [1,2,3,4,5,6,7],
     datasets: [
         {
             label: 'First Dataset',
@@ -46,6 +46,7 @@ const productService = new ProductService();
 
 onMounted(() => {
     productService.getProductsSmall().then((data) => (products.value = data));
+    productService.getv1().then((data) => (products.value = data));
 });
 const applyLightTheme = () => {
     lineOptions.value = {

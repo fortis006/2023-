@@ -14,24 +14,14 @@ const router = createRouter({
                     component: () => import('@/views/Dashboard.vue')
                 },
                 {
-                    path: '/uikit/floatlabel',
-                    name: 'floatlabel',
-                    component: () => import('@/views/uikit/FloatLabel.vue')
-                },
-                {
-                    path: '/uikit/invalidstate',
-                    name: 'invalidstate',
-                    component: () => import('@/views/uikit/InvalidState.vue')
-                },
-                {
                     path: '/uikit/rawdata',
                     name: 'rawdata',
                     component: () => import('@/views/uikit/RawData.vue')
                 },
                 {
-                    path: '/uikit/list',
-                    name: 'list',
-                    component: () => import('@/views/uikit/List.vue')
+                    path: '/uikit/fetch',
+                    name: 'fetch',
+                    component: () => import('@/views/uikit/Fetch.vue')
                 },
                 {
                     path: '/uikit/overlay',

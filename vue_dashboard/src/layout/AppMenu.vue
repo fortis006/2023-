@@ -21,6 +21,10 @@ const model = ref([
             { label: 'Vehicle3', icon: 'pi pi-fw pi-chart-pie', to: '/uikit/charts' }
         ]}
         ]
+    },
+    {
+        label: 'JSON Server',
+        items: [{ label: 'Fetch api', icon: 'pi pi-fw pi-book', to: '/uikit/Fetch' }]
     }
 ]);
 </script>
