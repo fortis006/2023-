@@ -1,12 +1,12 @@
 <script setup>
-import { onMounted, reactive, ref, watch } from 'vue';
+import { onMounted, ref, watch} from 'vue';
 import ProductService from '@/service/ProductService';
 import { useLayout } from '@/layout/composables/layout';
 
-
 const { isDarkTheme } = useLayout();
 
-const products = ref(null);
+const productv1 = ref([]);
+
 const dropdownValues = ref([
     { name: 'SPD(km/h)', code: 'SPD' },
     { name: 'RPM', code: 'RPM' },
@@ -19,9 +19,10 @@ const dropdownValues = ref([
     { name: 'IAT(°C)', code: 'IAT' },
     { name: 'Vol(V)', code: 'Vol' }
 ]);
+
 const dropdownValue = ref(null);
-const lineData = reactive({
-    labels: [1,2,3,4,5,6,7],
+const lineData = ref({
+    labels: [],
     datasets: [
         {
             label: 'First Dataset',
@@ -45,9 +46,15 @@ const lineOptions = ref(null);
 const productService = new ProductService();
 
 onMounted(() => {
-    productService.getProductsSmall().then((data) => (products.value = data));
-    productService.getv1().then((data) => (products.value = data));
+    productService.getv1().then(dates => {
+        productv1.value = dates; // 更新 productv1 数据
+        lineData.value.labels = dates; // 更新 labels 為日期數組
+    }).catch(error => {
+        console.error('Error fetching data from getv1:', error);
+    });
 });
+
+
 const applyLightTheme = () => {
     lineOptions.value = {
         plugins: {

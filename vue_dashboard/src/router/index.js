@@ -24,24 +24,9 @@ const router = createRouter({
                     component: () => import('@/views/uikit/Fetch.vue')
                 },
                 {
-                    path: '/uikit/overlay',
-                    name: 'overlay',
-                    component: () => import('@/views/uikit/Overlay.vue')
-                },
-                {
                     path: '/uikit/media',
                     name: 'media',
                     component: () => import('@/views/uikit/Media.vue')
-                },
-                {
-                    path: '/uikit/message',
-                    name: 'message',
-                    component: () => import('@/views/uikit/Messages.vue')
-                },
-                {
-                    path: '/uikit/file',
-                    name: 'file',
-                    component: () => import('@/views/uikit/File.vue')
                 },
                 {
                     path: '/uikit/charts',
