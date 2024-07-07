@@ -1,8 +1,21 @@
+// _footer.scss
+@import '@/assets/layout/_variables';
+// 頁腳樣式
 .layout-footer {
-    transition: margin-left $transitionDuration;
+    transition: margin-left $transition-duration;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 1rem;
     border-top: 1px solid var(--surface-border);
+
+    // 添加註釋以說明此處樣式的作用
+    // 其他樣式可以根據需要添加
+}
+
+// 使用媒體查詢來處理不同屏幕尺寸
+@media (max-width: 768px) {
+    .layout-footer {
+        padding-top: 0.5rem; // 調整小屏幕下的間距
+    }
 }

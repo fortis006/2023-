@@ -1,46 +1,63 @@
+@use 'sass:math';
+
+// 定義變量
+$preloader-bg-color: #edf1f5;
+$preloader-size: 150px;
+$preloader-border-width: 1em;
+$preloader-color: var(--primary-color);
+$preloader-z-index: 999999;
+$preloader-animation-duration: 2s;
+$preloader-animation-delay: 0.5s;
+
+// 預加載器樣式
 .preloader {
     position: fixed;
-    z-index: 999999;
-    background: #edf1f5;
+    z-index: $preloader-z-index;
+    background: $preloader-bg-color;
     width: 100%;
     height: 100%;
 }
+
+// 預加載器內容樣式
 .preloader-content {
     border: 0 solid transparent;
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: $preloader-size;
+    height: $preloader-size;
     position: absolute;
-    top: calc(50vh - 75px);
-    left: calc(50vw - 75px);
+    top: calc(50vh - #{math.div($preloader-size, 2)});
+    left: calc(50vw - #{math.div($preloader-size, 2)});
 }
 
-.preloader-content:before, .preloader-content:after{
+// 預加載器動畫
+.preloader-content:before,
+.preloader-content:after {
     content: '';
-    border: 1em solid var(--primary-color);
+    border: $preloader-border-width solid $preloader-color;
     border-radius: 50%;
     width: inherit;
     height: inherit;
     position: absolute;
     top: 0;
     left: 0;
-    animation: loader 2s linear infinite;
+    animation: loader $preloader-animation-duration linear infinite;
     opacity: 0;
 }
 
-.preloader-content:before{
-    animation-delay: 0.5s;
+.preloader-content:before {
+    animation-delay: $preloader-animation-delay;
 }
 
-@keyframes loader{
-    0%{
+// 加載動畫關鍵幀
+@keyframes loader {
+    0% {
         transform: scale(0);
         opacity: 0;
     }
-    50%{
+    50% {
         opacity: 1;
     }
-    100%{
+    100% {
         transform: scale(1);
         opacity: 0;
     }

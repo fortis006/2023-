@@ -1,18 +1,29 @@
-@media screen and (min-width: 1960px) {
-    .layout-main, .landing-wrapper {
-        width: 1504px;
+// _responsive.scss
+
+// 定義變量
+$large-screen-width: 1960px;
+$large-screen-content-width: 1504px;
+$sidebar-width: 300px;
+$padding-left: 2rem;
+$transition-duration: 0.3s; // 示例過渡時間
+
+// 大屏幕樣式
+@media screen and (min-width: $large-screen-width) {
+    .layout-main,
+    .landing-wrapper {
+        width: $large-screen-content-width;
         margin-left: auto !important;
         margin-right: auto !important;
     }
-
 }
 
+// 中屏幕及以上樣式
 @media (min-width: 992px) {
     .layout-wrapper {
         &.layout-overlay {
             .layout-main-container {
                 margin-left: 0;
-                padding-left: 2rem;
+                padding-left: $padding-left;
             }
 
             .layout-sidebar {
@@ -33,7 +44,7 @@
 
         &.layout-static {
             .layout-main-container {
-                margin-left: 300px;
+                margin-left: $sidebar-width;
             }
 
             &.layout-static-inactive {
@@ -44,7 +55,7 @@
 
                 .layout-main-container {
                     margin-left: 0;
-                    padding-left: 2rem;
+                    padding-left: $padding-left;
                 }
             }
         }
@@ -55,6 +66,7 @@
     }
 }
 
+// 小屏幕樣式
 @media (max-width: 991px) {
     .blocked-scroll {
         overflow: hidden;
@@ -63,7 +75,7 @@
     .layout-wrapper {
         .layout-main-container {
             margin-left: 0;
-            padding-left: 2rem;
+            padding-left: $padding-left;
         }
 
         .layout-sidebar {
@@ -93,7 +105,7 @@
 
             .layout-mask {
                 display: block;
-                animation: fadein $transitionDuration;
+                animation: fadein $transition-duration;
             }
         }
     }

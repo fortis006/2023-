@@ -1,4 +1,32 @@
-/* General */
-$scale:14px;                    /* main font size */ 
-$borderRadius:12px;             /* border radius of layout element e.g. card, sidebar */ 
-$transitionDuration:.2s;        /* transition duration of layout elements e.g. sidebar, overlay menus */ 
+// _variables.scss
+
+/* General Variables */
+$scale: 14px;                    // 主字體大小
+$border-radius: 12px;            // 佈局元素的邊框半徑
+$transition-duration: 0.2s;      // 佈局元素的過渡時間
+
+/* Color Variables */
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$info-color: #17a2b8;
+$warning-color: #ffc107;
+$danger-color: #dc3545;
+$light-color: #f8f9fa;
+$dark-color: #343a40;
+
+/* Text Variables */
+$text-color: #212529;
+$text-color-secondary: #6c757d;
+$text-color-light: #f8f9fa;
+$text-color-dark: #343a40;
+
+/* Background Variables */
+$background-color: #ffffff;
+$background-color-secondary: #f8f9fa;
+
+/* Border Variables */
+$border-color: #dee2e6;
+
+/* Shadow Variables */
+$box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.02), 0px 0px 2px rgba(0, 0, 0, 0.05), 0px 1px 4px rgba(0, 0, 0, 0.08);

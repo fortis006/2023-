@@ -19,11 +19,6 @@ const router = createRouter({
                     component: () => import('@/views/uikit/RawData.vue')
                 },
                 {
-                    path: '/uikit/fetch',
-                    name: 'fetch',
-                    component: () => import('@/views/uikit/Fetch.vue')
-                },
-                {
                     path: '/uikit/media',
                     name: 'media',
                     component: () => import('@/views/uikit/Media.vue')
@@ -34,19 +29,9 @@ const router = createRouter({
                     component: () => import('@/views/uikit/Chart.vue')
                 },
                 {
-                    path: '/uikit/misc',
-                    name: 'misc',
-                    component: () => import('@/views/uikit/Misc.vue')
-                },
-                {
-                    path: '/blocks',
-                    name: 'blocks',
-                    component: () => import('@/views/utilities/Blocks.vue')
-                },
-                {
-                    path: '/utilities/icons',
-                    name: 'icons',
-                    component: () => import('@/views/utilities/Icons.vue')
+                    path: '/uikit/comparev1',
+                    name: 'comparev1',
+                    component: () => import('@/views/uikit/Comparev1.vue')
                 },
                 {
                     path: '/documentation',

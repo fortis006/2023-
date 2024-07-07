@@ -1,10 +1,13 @@
+// _main.scss
+
+// 全局樣式設置
 * {
     box-sizing: border-box;
 }
 
 html {
     height: 100%;
-    font-size: $scale;
+    font-size: $scale; // 使用變量管理字體大小
 }
 
 body {
@@ -18,10 +21,24 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+// 超鏈接樣式設置
 a {
     text-decoration: none;
 }
 
+// 布局包裝器樣式設置
 .layout-wrapper {
     min-height: 100vh;
+}
+
+// 使用媒體查詢來處理不同屏幕尺寸
+@media (max-width: 768px) {
+    html {
+        height: 100%;
+        font-size: $scale;
+    }
+
+    .layout-wrapper {
+        padding: 1rem; // 小屏幕下調整佈局間距
+    }
 }

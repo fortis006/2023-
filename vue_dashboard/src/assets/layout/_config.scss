@@ -1,3 +1,6 @@
+// _config.scss
+
+// 配置按鈕樣式
 .layout-wrapper {
     .layout-config-button {
         display: block;
@@ -33,6 +36,7 @@
         }
     }
 
+    // 配置側邊欄樣式
     .layout-config-sidebar {
         &.p-sidebar {
             .p-sidebar-content {

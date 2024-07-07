@@ -49,7 +49,7 @@ const setChart = () => {
         plugins: {
             legend: {
                 labels: {
-                    fontColor: textColor
+                    // fontColor: textColor
                 }
             }
         },

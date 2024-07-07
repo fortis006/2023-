@@ -1,13 +1,32 @@
+// _mixins.scss
+
+// 焦點樣式混合
+// 用於設置元素獲得焦點時的樣式，包含盒陰影效果
 @mixin focused() {
     outline: 0 none;
     outline-offset: 0;
-    transition: box-shadow .2s;
+    transition: box-shadow 0.2s;
     box-shadow: var(--focus-ring);
 }
 
+// 內嵌焦點樣式混合
+// 用於設置元素獲得焦點時的內嵌盒陰影效果
 @mixin focused-inset() {
     outline: 0 none;
     outline-offset: 0;
-    transition: box-shadow .2s;
+    transition: box-shadow 0.2s;
     box-shadow: inset var(--focus-ring);
+}
+
+// 示例：過渡效果混合
+// 用於設置元素的過渡效果
+@mixin transition($properties, $duration: 0.2s, $timing: ease-in-out) {
+    transition: $properties $duration $timing;
+}
+
+// 示例：間距混合
+// 用於設置元素的內外邊距
+@mixin spacing($margin: 0, $padding: 0) {
+    margin: $margin;
+    padding: $padding;
 }

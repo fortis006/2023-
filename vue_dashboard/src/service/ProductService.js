@@ -1,15 +1,20 @@
 export default class ProductService {
-    getv1() {
-                return fetch('mock/v1.json')
-                .then(response => response.json()) // 將響應轉換為JSON格式
-                .then(data => {
-                  const dates = data.map(doc => doc.time.$date); // 將每個文檔的 time.$date 轉換為新陣列
-                  console.log(dates); // 打印日期陣列
-                  return dates; // 返回日期陣列
-            })
-            .catch(error => {
-              console.error('Error fetching JSON data:', error); // 處理錯誤
-            });
-        } // Add closing curly brace for getv1 method
-  
+  /**
+   * Fetches data from 'mock/v1.json' and returns the data.
+   * @returns {Promise<Object[]>} A promise that resolves to an array of objects.
+   */
+  async getv1() {
+    try {
+      const response = await fetch('mock/v1.json');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log(data);
+      return data;
+    } catch (error) {
+      console.error('Error fetching JSON data:', error);
+      throw error; // Re-throw the error after logging it
+    }
+  }
 }

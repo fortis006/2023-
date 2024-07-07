@@ -16,7 +16,7 @@ const model = ref([
         label: 'Forcast',
         items: [
         { label: 'Compare' , icon: 'pi pi-fw pi-chart-bar', items: [
-            { label: 'Vehicle1', icon: 'pi pi-fw pi-chart-bar', to: '/uikit/charts' },
+            { label: 'Vehicle1', icon: 'pi pi-fw pi-chart-bar', to: '/uikit/comparev1' },
             { label: 'Vehicle2', icon: 'pi pi-fw pi-chart-line', to: '/uikit/charts' },
             { label: 'Vehicle3', icon: 'pi pi-fw pi-chart-pie', to: '/uikit/charts' }
         ]}

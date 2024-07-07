@@ -1,16 +1,27 @@
+// _topbar.scss
+
+// 定義變量
+$topbar-height: 5rem;
+$topbar-padding: 0 2rem;
+$topbar-shadow: 0px 3px 5px rgba(0,0,0,.02), 0px 0px 2px rgba(0,0,0,.05), 0px 1px 4px rgba(0,0,0,.08);
+$button-size: 3rem;
+$logo-width: 300px;
+$transition-duration: 0.3s; // 示例過渡時間
+
+// 頂部導航欄樣式
 .layout-topbar {
     position: fixed;
-    height: 5rem;
+    height: $topbar-height;
     z-index: 997;
     left: 0;
     top: 0;
     width: 100%;
-    padding: 0 2rem;
+    padding: $topbar-padding;
     background-color: var(--surface-card);
-    transition: left $transitionDuration;
+    transition: left $transition-duration;
     display: flex;
     align-items: center;
-    box-shadow: 0px 3px 5px rgba(0,0,0,.02), 0px 0px 2px rgba(0,0,0,.05), 0px 1px 4px rgba(0,0,0,.08);
+    box-shadow: $topbar-shadow;
 
     .layout-topbar-logo {
         display: flex;
@@ -18,12 +29,12 @@
         color: var(--surface-900);
         font-size: 1.5rem;
         font-weight: 500;
-        width: 300px;
+        width: $logo-width;
         border-radius: 12px;
 
         img {
             height: 2.5rem;
-            margin-right: .5rem;
+            margin-right: 0.5rem;
         }
 
         &:focus {
@@ -38,10 +49,10 @@
         position: relative;
         color: var(--text-color-secondary);
         border-radius: 50%;
-        width: 3rem;
-        height: 3rem;
+        width: $button-size;
+        height: $button-size;
         cursor: pointer;
-        transition: background-color $transitionDuration;
+        transition: background-color $transition-duration;
 
         &:hover {
             color: var(--text-color);
@@ -86,6 +97,7 @@
     }
 }
 
+// 響應式設計：小屏幕樣式
 @media (max-width: 991px) {
     .layout-topbar {
         justify-content: space-between;
@@ -111,18 +123,17 @@
             position: absolute;
             flex-direction: column;
             background-color: var(--surface-overlay);
-            box-shadow: 0px 3px 5px rgba(0,0,0,.02), 0px 0px 2px rgba(0,0,0,.05), 0px 1px 4px rgba(0,0,0,.08);
+            box-shadow: $topbar-shadow;
             border-radius: 12px;
             padding: 1rem;
             right: 2rem;
-            top: 5rem;
+            top: $topbar-height;
             min-width: 15rem;
             display: none;
-            -webkit-animation: scalein 0.15s linear;
             animation: scalein 0.15s linear;
 
             &.layout-topbar-menu-mobile-active {
-                display: block
+                display: block;
             }
 
             .layout-topbar-button {
@@ -136,7 +147,7 @@
 
                 i {
                     font-size: 1rem;
-                    margin-right: .5rem;
+                    margin-right: 0.5rem;
                 }
 
                 span {
@@ -145,5 +156,17 @@
                 }
             }
         }
+    }
+}
+
+// 動畫效果
+@keyframes scalein {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
     }
 }

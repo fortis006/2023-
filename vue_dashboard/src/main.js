@@ -50,6 +50,20 @@ import InputMask from 'primevue/inputmask';
 import InputNumber from 'primevue/inputnumber';
 import Knob from 'primevue/knob';
 import Listbox from 'primevue/listbox';
+import L from 'leaflet';
+
+// 設置全局默認圖標
+delete L.Icon.Default.prototype._getIconUrl;
+
+import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
+import markerIcon from 'leaflet/dist/images/marker-icon.png';
+import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+
+L.Icon.Default.mergeOptions({
+    iconRetinaUrl: markerIcon2x,
+    iconUrl: markerIcon,
+    shadowUrl: markerShadow
+});
 import MegaMenu from 'primevue/megamenu';
 import Menu from 'primevue/menu';
 import Menubar from 'primevue/menubar';
@@ -101,7 +115,7 @@ import TriStateCheckbox from 'primevue/tristatecheckbox';
 import VirtualScroller from 'primevue/virtualscroller';
 
 import BlockViewer from '@/components/BlockViewer.vue';
-
+import 'leaflet/dist/leaflet.css';
 import '@/assets/styles.scss';
 
 const app = createApp(App);

@@ -1,61 +1,71 @@
+// _typography.scss
+
+// 定義變量
+$heading-margin: 1.5rem 0 1rem 0;
+$heading-color: var(--surface-900);
+$heading-line-height: 1.2;
+$heading-font-weight: 500;
+
+$mark-background: #FFF8E1;
+$mark-padding: 0.25rem 0.4rem;
+
+$blockquote-margin: 1rem 0;
+$blockquote-padding: 0 2rem;
+$blockquote-border-color: #90A4AE;
+$blockquote-border-width: 4px;
+
+$hr-border-color: var(--surface-border);
+$hr-border-width: 1px 0 0 0;
+$hr-margin: 1rem 0;
+
+$p-margin: 0 0 1rem 0;
+$p-line-height: 1.5;
+
+// 標題樣式
 h1, h2, h3, h4, h5, h6 {
-    margin: 1.5rem 0 1rem 0;
+    margin: $heading-margin;
     font-family: inherit;
-    font-weight: 500;
-    line-height: 1.2;
-    color: var(--surface-900);
+    font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
+    color: $heading-color;
 
     &:first-child {
         margin-top: 0;
     }
 }
 
-h1 {
-    font-size: 2.5rem;
-}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
 
-h2 {
-    font-size: 2rem;
-}
-
-h3 {
-    font-size: 1.75rem;
-}
-
-h4 {
-    font-size: 1.5rem;
-}
-
-h5 {
-    font-size: 1.25rem;
-}
-
-h6 {
-    font-size: 1rem;
-}
-
+// 標記樣式
 mark {
-    background: #FFF8E1;
-    padding: .25rem .4rem;
-    border-radius: $borderRadius;
+    background: $mark-background;
+    padding: $mark-padding;
+    border-radius: $border-radius;
     font-family: monospace;
 }
 
+// 引用樣式
 blockquote {
-    margin: 1rem 0;
-    padding: 0 2rem;
-    border-left: 4px solid #90A4AE;
+    margin: $blockquote-margin;
+    padding: $blockquote-padding;
+    border-left: $blockquote-border-width solid $blockquote-border-color;
 }
 
+// 水平線樣式
 hr {
-    border-top: solid var(--surface-border);
-    border-width: 1px 0 0 0;
-    margin: 1rem 0;
+    border-top: $hr-border-width solid $hr-border-color;
+    margin: $hr-margin;
 }
 
+// 段落樣式
 p {
-    margin: 0 0 1rem 0;
-    line-height: 1.5;
+    margin: $p-margin;
+    line-height: $p-line-height;
 
     &:last-child {
         margin-bottom: 0;

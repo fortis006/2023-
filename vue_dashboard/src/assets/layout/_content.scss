@@ -1,12 +1,36 @@
+@import 'variables'; // 確保引入變數檔案
+
+// 主容器樣式
 .layout-main-container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     justify-content: space-between;
     padding: 7rem 2rem 2rem 4rem;
-    transition: margin-left $transitionDuration;
+    transition: margin-left $transition-duration; // 修正變數名稱
+    
+    // 添加註釋以說明此處樣式的作用
+    // 主內容區域的樣式
+    .layout-main {
+        .layout-main-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: space-between;
+            padding: 7rem 2rem 2rem 4rem;
+            transition: margin-left $transition-duration; // 修正變數名稱
+        }
+        
+        .layout-main {
+            flex: 1 1 auto;
+        }
+        flex: 1 1 auto;
+    }   
 }
 
-.layout-main {
-    flex: 1 1 auto;
+// 使用媒體查詢來處理不同屏幕尺寸
+@media (max-width: 768px) {
+    .layout-main-container {
+        padding: 5rem 1rem 1rem 2rem; // 調整小屏幕下的間距
+    }
 }
